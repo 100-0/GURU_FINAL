@@ -168,7 +168,18 @@ public class PlayerMove : MonoBehaviour
     // hp 회복 함수
     public void heal()
     {
-        hp += 20;
-        print("HP 증가!");
+        if(hp <= 30)
+        {
+            hp += 20;
+            print("HP 증가!");
+            hpText.text = "  " + hp;
+        }
+        else
+        {
+            hp = maxHp;
+            print("HP 증가!");
+            hpText.text = "  " + hp;
+        }
+        
     }
 }
